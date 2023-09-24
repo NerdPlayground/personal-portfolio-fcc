@@ -1,10 +1,227 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-:root {
-  --black: #333333;
-  --white: #F5F5F5;
+:root{
+    --red: #F50000;
+    --black: #333333;
+    --white: #F5F5F5;
+    --neu-light: #F5F5F5;
+    --neu-shadows: #626262;
+}
+
+.fit-width{
+    width: fit-content;
+    max-width: fit-content;
+}
+
+.fit-height{
+    height: fit-content;
+    max-height: fit-content;
+}
+
+.fit-all{
+    width: fit-content;
+    max-width: fit-content;
+    height: fit-content;
+    max-height: fit-content;
+}
+
+body{
+    overflow: hidden;
+    width: 100vw;
+    max-width: 100vw;
+    height: 100vh;
+    max-height: 100vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#root{
+    --section1: 50%;
+    --section2: calc(100% - var(--section1));
+    padding: 50px;
+    padding-bottom: 30px;
+    width: 100%;
+    max-width: 1400px;
+    height: 100%;
+    max-height: 800px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    background-color: var(--white);
+}
+
+#welcome-section{
+    overflow: auto;
+    padding: 25px;
+    width: var(--section1);
+    max-width: var(--section1);
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    border-radius: 10px;
+    /* border: 2px solid var(--black); */
+}
+
+#welcome-section::-webkit-scrollbar{
+    display: none;
+}
+
+.welcome{
+    margin-bottom: 25px;
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    /* border: 1px solid red; */
+}
+
+.welcome:last-of-type{
+    margin-bottom: 0px;
+}
+
+.block-title{
+    --font-size: 24px;
+    margin-bottom: 15px;
+    font-size: var(--font-size);
+    line-height: var(--font-size);
+    font-weight: normal;
+    font-family: "Courier Prime", monospace;
+    /* border: 1px solid red; */
+}
+
+#introduction{
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+#introduction h1{
+    min-height: calc(var(--font-size) + 6px);
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: flex-end;
+}
+
+#hello{
+    display: block;
+    margin-right: 17px;
+    /* border: 1px solid red; */
+}
+
+#name{
+    display: block;
+    font-size: calc(var(--font-size) + 4px);
+    line-height: calc(var(--font-size) + 4px);
+    font-family: "Black Ops One", monospace;
+    /* border: 1px solid red; */
+}
+
+#cursor{
+    display: block;
+    width: 24px;
+    max-width: 24px;
+    border-bottom: 5px solid var(--black);
+    opacity: 0;
+    animation: blink 0.5s linear infinite;
+}
+
+@keyframes blink{
+    0%{ opacity: 0; }
+    50%{ opacity: 0.5; }
+    100%{ opacity: 1; }
+}
+
+#description{
+    width: 100%;
+    max-width: 100%;
+    font-size: 19px;
+    font-family: "Cutive Mono", monospace;
+    /* border: 1px solid red; */
+}
+
+#skill-set{
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+#skill-set h2{
+    display: block;
+}
+
+#skill-set h2 span:first-child{
+    text-decoration: line-through var(--red) solid 7px;
+}
+
+#skill-set h2 span:last-child{
+    color: var(--red);
+}
+
+#skills{
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+#skills span{
+    --blur: 0px;
+    --distance: 3px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding-block: 5px;
+    padding-inline: 10px;
+    font-size: 19px;
+    font-family: "Cutive Mono", monospace;
+    border-radius: 5px;
+    border: 1px dashed var(--black);
+    background: var(--white);
+    box-shadow:  var(--distance) var(--distance) var(--blur) var(--neu-shadows),
+    calc(var(--distance) * -1) calc(var(--distance) * -1) var(--blur) var(--neu-light);
+}
+
+#socials{
+    align-self: flex-end;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.social-link{
+    margin-right: 25px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--black);
+    text-decoration: none;
+    border-radius: 10px;
+    border: 2px solid var(--black);
+}
+
+.social-link img{
+    padding: 5px;
+    --size: 50px;
+    width: var(--size);
+    max-width: var(--size);
+    height: var(--size);
+    max-height: var(--size);
+    object-fit: contain;
+    border-radius: 5px;
+    border: 1px dashed var(--black);
 }
