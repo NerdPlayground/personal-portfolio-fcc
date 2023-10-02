@@ -44,6 +44,7 @@ body{
 #root{
     --section1: 50%;
     --section2: calc(100% - var(--section1));
+    overflow: auto;
     padding: 50px;
     padding-bottom: 30px;
     width: 100%;
@@ -51,25 +52,42 @@ body{
     height: 100%;
     max-height: 800px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    flex-wrap: wrap;
     align-items: flex-start;
     justify-content: flex-start;
     background-color: var(--white);
 }
 
+.button{
+    cursor: pointer;
+    display: block;
+    padding-block: 5px;
+    padding-inline: 10px;
+    color: var(--black);
+    text-align: center;
+    border-radius: 5px;
+    border: 2px solid var(--black);
+    border-right-width: 5px;
+    border-bottom-width: 5px;
+}
+
+.button:focus,
+.button:active{
+    border-right-width: 2px;
+    border-bottom-width: 2px;
+}
+
 #welcome-section{
-    overflow: auto;
     padding: 25px;
+    margin-bottom: 25px;
     width: var(--section1);
     max-width: var(--section1);
-    height: 100%;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    border-radius: 10px;
-    /* border: 2px solid var(--black); */
+    border: 1px solid red;
 }
 
 #welcome-section::-webkit-scrollbar{
@@ -77,7 +95,7 @@ body{
 }
 
 .welcome{
-    margin-bottom: 25px;
+    margin-bottom: 50px;
     width: 100%;
     max-width: 100%;
     display: flex;
@@ -194,14 +212,20 @@ body{
 }
 
 #socials{
-    align-self: flex-end;
+    --border-radius: 5px;
+    padding-inline: 25px;
+    width: var(--section1);
+    max-width: var(--section1);
+    display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
+    border: 1px solid red;
 }
 
 .social-link{
+    --padding: 5px;
     margin-right: 25px;
     padding: 5px;
     display: flex;
@@ -210,8 +234,8 @@ body{
     justify-content: center;
     color: var(--black);
     text-decoration: none;
-    border-radius: 10px;
     border: 2px solid var(--black);
+    border-radius: calc(var(--border-radius) + var(--padding));
 }
 
 .social-link img{
@@ -222,6 +246,259 @@ body{
     height: var(--size);
     max-height: var(--size);
     object-fit: contain;
-    border-radius: 5px;
     border: 1px dashed var(--black);
+    border-radius: var(--border-radius);
+}
+
+#navbar{
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    width: var(--section2);
+    max-width: var(--section2);
+    border: 1px solid red;
+}
+
+#navbar a{
+    margin-right: 25px;
+    width: 150px;
+    max-width: 150px;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: "Courier Prime", monospace;
+}
+
+#navbar a:last-of-type{
+    margin-right: 0px;
+}
+
+#content-section{
+    position: relative;
+    overflow: hidden;
+    padding: 25px;
+    width: var(--section2);
+    max-width: var(--section2);
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    /* border-left: 2px solid var(--black);
+    border-right: 2px solid var(--black); */
+}
+
+.content-container{
+    position: absolute;
+    overflow: auto;
+    left: 0;
+    padding-left: 25px;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    max-height: 100%;
+    background-color: var(--white);
+    font-size: 19px;
+    font-family: "Cutive Mono", monospace;
+    /* border-top: 2px solid var(--black);
+    border-bottom: 2px solid var(--black); */
+    transition: left 1s linear;
+}
+
+.content-container:not(:nth-child(1)){
+    left: 100%;
+}
+
+#projects::-webkit-scrollbar,
+#experience::-webkit-scrollbar,
+#contact::-webkit-scrollbar{
+    display: none;
+}
+
+.project-tile,
+.experience-tile{
+    margin-bottom: 25px;
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    border-radius: 10px;
+    border: 2px solid var(--black);
+}
+
+.period-title{
+    padding: 10px;
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: flex-start;
+    font-weight: bold;
+    color: var(--white);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background-color: var(--black);
+    /* border: 1px solid var(--red); */
+}
+
+.period{
+    margin-right: 50px;
+    width: var(--period);
+    max-width: var(--period);
+    /* border: 1px solid var(--red); */
+}
+
+.title{
+    display: inline-block;
+    width: fit-content;
+    max-width: fit-content;
+    height: fit-content;
+    max-height: fit-content;
+    color: var(--white);
+    text-decoration: none;
+    /* border: 1px solid var(--red); */
+}
+
+.title::after{
+    content: "⇧";
+    margin-left: 10px;
+    display: inline-block;
+    transform: rotate(90deg) scale(1.25);
+}
+
+.title:hover::after{
+    animation: wave 1s linear infinite;
+}
+
+@keyframes wave{
+    0%{ transform: rotate(90deg) scale(1.25); }
+    50%{ transform: rotate(90deg) scale(1.75); }
+    100%{ transform: rotate(90deg) scale(1.25); }
+}
+
+.description{
+    padding: 10px;
+    width: 100%;
+    max-width: 100%;
+    /* border: 1px solid red; */
+}
+
+.tools,
+.positions{
+    padding: 10px;
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    border-top: 2px dashed var(--black);
+}
+
+.tools span{
+    padding-inline: 5px;
+    padding-block: 2.5px;
+    margin-right: 10px;
+    color: var(--white);
+    font-weight: bold;
+}
+
+.positions{
+    border: none;
+    border-bottom: 2px dashed var(--black);;
+}
+
+.positions span{
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.contact{
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 25px;
+    /* border: 1px solid red; */
+}
+
+.contact:last-child{
+    margin-bottom: 0;
+}
+
+form.contact{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+form.contact div{
+    --label: 20%;
+    --space: 25px;
+    --input: calc(100% - var(--space) - var(--label));
+    margin-bottom: 15px;
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: flex-start;
+    /* border: 1px solid red; */
+}
+
+form.contact div:last-of-type{
+    margin-bottom: 25px;
+}
+
+form.contact div > *{
+    padding-block: 5px;
+    padding-inline: 10px;
+    font-size: 18px;
+    border: 2px solid var(--black);
+    font-family: "Cutive Mono", monospace;
+}
+
+form.contact div label{
+    margin-right: var(--space);
+    width: var(--label);
+    max-width: var(--label);
+    font-weight: bold;
+    color: var(--white);
+    background-color: var(--black);
+}
+
+.input{
+    min-width: var(--input);
+    width: var(--input);
+    max-width: var(--input);
+    background-color: var(--white);
+}
+
+.input:active,.input:focus{
+    outline: none;
+    border-style: dashed;
+}
+
+textarea.input{
+    min-height: 100px;
+}
+
+form.contact > input{
+    width: 200px;
+    max-width: 200px;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: "Cutive Mono", monospace;
+}
+
+#welcome-section,
+#socials,
+#navbar
+/* #content-section */
+{
+    border: none;
 }
