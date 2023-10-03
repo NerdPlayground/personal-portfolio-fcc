@@ -29,14 +29,14 @@ function togglePage(event){
 }
 
 document.addEventListener("DOMContentLoaded",function(){
-    let socials=document.getElementById("socials");
-    let welcomeSections=document.getElementById("welcome-section");
-    welcomeSections.style.minHeight=`calc(100% - 25px - ${socials.offsetHeight}px)`;
-
     let navBar=document.getElementById("navbar");
-    let contentSection=document.getElementById("content-section");
-    contentSection.style.minHeight=`calc(100% - 25px - ${navBar.offsetHeight}px)`;
-
+    let mainContent=document.getElementById("main-content");
+    mainContent.style.minHeight=`calc(100% - ${navBar.offsetHeight}px)`;
+    
+    // let socials=document.getElementById("socials");
+    // let welcomeSections=document.getElementById("welcome-section");
+    // welcomeSections.style.minHeight=`calc(100% - 25px - ${socials.offsetHeight}px)`;
+    
     let name=Array.from("GEORGE MOBISA");
     let nameContainer=document.getElementById("name");
     let counter=0;
