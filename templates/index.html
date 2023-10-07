@@ -7,6 +7,7 @@
         <title>George Mobisa</title>
         <link rel="icon" href="" type="image/x-icon" sizes="16x16 32x32">
         <link rel="stylesheet" href="../static/css/styles.css">
+        <link rel="stylesheet" href="../static/css/media-queries.css">
         <!-- Google Fonts; Black Ops One, Roboto Condensed, Cutive Mono -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,17 +17,31 @@
     </head>
     <body>
         <div id="root">
+            <nav id="nav-pane" class="fit-width">
+                <svg class="button toggle-nav-pane" fill="#333333" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" onclick="toggleNavPane()">
+                    <path fill-rule="evenodd" d="M19.505 4.975a.6.6 0 0 1 0 .85l-13.2 13.2a.6.6 0 0 1-.85-.85l13.2-13.2a.598.598 0 0 1 .85 0Z" clip-rule="evenodd"></path>
+                    <path fill-rule="evenodd" d="M5.456 4.975a.6.6 0 0 0 0 .85l13.2 13.2a.6.6 0 1 0 .85-.85l-13.2-13.2a.6.6 0 0 0-.85 0Z" clip-rule="evenodd"></path>
+                </svg>
+                <div id="nav-links">
+                    <a onclick="togglePage(event)" class="button nav-link" href="#projects">Projects</a>
+                    <a onclick="togglePage(event)" class="button nav-link" href="#experience">Experience</a>
+                    <a onclick="togglePage(event)" class="button nav-link" href="#contact">Contact</a>
+                </div>
+            </nav>
             <nav id="navbar" class="fit-height">
-                <a onclick="togglePage(event)" class="button" href="#projects">Projects</a>
-                <a onclick="togglePage(event)" class="button" href="#experience">Experience</a>
-                <a onclick="togglePage(event)" class="button" href="#contact">Contact</a>
+                <a onclick="togglePage(event)" class="button nav-link" href="#projects">Projects</a>
+                <a onclick="togglePage(event)" class="button nav-link" href="#experience">Experience</a>
+                <a onclick="togglePage(event)" class="button nav-link" href="#contact">Contact</a>
+                <svg class="button toggle-nav-pane" fill="#333333" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" onclick="toggleNavPane()">
+                    <path fill-rule="evenodd" d="M4.92 17.28a.6.6 0 0 1 .6-.6h12a.599.599 0 1 1 0 1.2h-12a.6.6 0 0 1-.6-.6Zm0-4.8a.6.6 0 0 1 .6-.6h12a.599.599 0 1 1 0 1.2h-12a.6.6 0 0 1-.6-.6Zm0-4.8a.6.6 0 0 1 .6-.6h12a.6.6 0 1 1 0 1.2h-12a.6.6 0 0 1-.6-.6Z" clip-rule="evenodd"></path>
+                </svg>
             </nav>
             <main id="main-content" class="fit-height">
                 <section id="welcome-section" class="fit-height">
                     <div id="introduction" class="fit-height welcome">
                         <h1 class="block-title">
                             <span id="hello">Hello there, I'm</span>
-                            <span id="name"></span> <span id="cursor"></span>
+                            <span><span id="name"></span><span id="cursor"></span></span>
                         </h1>
                         <div id="description" class="fit-height">
                             ...a Software Developer with an aptitude for analytical concepts. Having experience as a 
@@ -67,10 +82,13 @@
                 </section>
                 <section id="content-section" class="fit-height">
                     <div id="projects" class="content-container">
+                        <span class="content-title">
+                            PROJECTS
+                        </span>
                         <div class="project-tile fit-height">
                             <div class="period-title fit-height">
-                                <span class="period">05/22 - 09/22</span>
-                                <a class="title" href="https://github.com/NerdPlayground/allyoucaneat" target="_blank">All You Can Eat</a>
+                                <span class="period fit-all">05/22 - 09/22</span>
+                                <a class="title fit-all" href="https://github.com/NerdPlayground/allyoucaneat" target="_blank">All You Can Eat</a>
                             </div>
                             <div class="description">
                                 Web app for ordering fruits and drinks from connected vendors. 
@@ -88,8 +106,8 @@
                         </div>
                         <div class="project-tile fit-height">
                             <div class="period-title fit-height">
-                                <span class="period">12/22 - 01/23</span>
-                                <a class="title" href="https://github.com/NerdPlayground/cleanupgmailapi" target="_blank">Cleanup Gmail API</a>
+                                <span class="period fit-all">12/22 - 01/23</span>
+                                <a class="title fit-all" href="https://github.com/NerdPlayground/cleanupgmailapi" target="_blank">Cleanup Gmail API</a>
                             </div>
                             <div class="description">
                                 API for organizing your Gmail's inbox. 
@@ -104,8 +122,8 @@
                         </div>
                         <div class="project-tile fit-height">
                             <div class="period-title fit-height">
-                                <span class="period">05/22 - 10/22</span>
-                                <a class="title" href="https://github.com/NerdPlayground/sasapayproducts" target="_blank">SasaPay Products</a>
+                                <span class="period fit-all">05/22 - 10/22</span>
+                                <a class="title fit-all" href="https://github.com/NerdPlayground/sasapayproducts" target="_blank">SasaPay Products</a>
                             </div>
                             <div class="description">
                                 API that consumes endpoints in SasaPay API. 
@@ -119,8 +137,8 @@
                         </div>
                         <div class="project-tile fit-height">
                             <div class="period-title fit-height">
-                                <span class="period">09/23 - 09/23</span>
-                                <a class="title" href="https://github.com/NerdPlayground/file-handling-platform" target="_blank">File Handling Platform</a>
+                                <span class="period fit-all">09/23 - 09/23</span>
+                                <a class="title fit-all" href="https://github.com/NerdPlayground/file-handling-platform" target="_blank">File Handling Platform</a>
                             </div>
                             <div class="description">
                                 Web app for staging and reviewing files before processing them using your custom implementation. 
@@ -134,10 +152,13 @@
                         </div>
                     </div>
                     <div id="experience" class="content-container">
+                        <span class="content-title">
+                            EXPERIENCE
+                        </span>
                         <div class="experience-tile fit-height">
                             <div class="period-title fit-height">
-                                <span class="period">05/23 - 08/23</span>
-                                <a class="title" href="https://moti-carsharing.azurewebsites.net/" target="_blank">MOTI INC</a>
+                                <span class="period fit-all">05/23 - 08/23</span>
+                                <a class="title fit-all" href="https://moti-carsharing.azurewebsites.net/" target="_blank">MOTI INC</a>
                             </div>
                             <div class="positions">
                                 <span class="fit-all">Web Developer</span>
@@ -157,8 +178,8 @@
                         </div>
                         <div class="experience-tile fit-height">
                             <div class="period-title fit-height">
-                                <span class="period">01/22 - 06/22</span>
-                                <a class="title" href="https://www.sasapay.co.ke/" target="_blank">sasapay</a>
+                                <span class="period fit-all">01/22 - 06/22</span>
+                                <a class="title fit-all" href="https://www.sasapay.co.ke/" target="_blank">sasapay</a>
                             </div>
                             <div class="positions">
                                 <span class="fit-all">Backend Developer</span>
@@ -177,6 +198,9 @@
                         </div>
                     </div>
                     <div id="contact" class="content-container">
+                        <span class="content-title">
+                            CONTACT
+                        </span>
                         <p class="contact fit-height">
                             If you have any interesting projects that you need a hand in 
                             or if you just want to say hello, don't hesitate to reach out;

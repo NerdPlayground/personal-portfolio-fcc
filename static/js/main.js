@@ -7,24 +7,36 @@ Array.prototype.indexOf=function(element){
     return -1;
 }
 
-function togglePage(event){
-    event.preventDefault();
-    let selectedPage=event.target.innerText.toLowerCase();
-    if(CURRENT===selectedPage) return;
-    
-    let currentPage=document.getElementById(CURRENT);
-    let currentIndex=SEQUENCE.indexOf(CURRENT);
-    let nextIndex=SEQUENCE.indexOf(selectedPage);
-    let direction=(currentIndex-nextIndex>0)? -1 : 1;
+function toggleNavPane(event){
+    let navPane=document.getElementById("nav-pane");
+    navPane.style.right=(
+        navPane.style.right===""? "0px" :
+        navPane.style.right==="-250px"? "0px" :
+        navPane.style.right==="0px"? "-250px" : "-1"
+    );
+}
 
-    currentPage.style.left=`${-1*direction*100}%`;
-    for(let i=currentIndex+direction;;i+=direction){
-        let thisPage=document.getElementById(SEQUENCE[i]);
-        thisPage.style.opacity="1";
-        thisPage.style.left="0";
-        if(SEQUENCE[i]===selectedPage) break;
-        thisPage.style.opacity="0";
-        thisPage.style.left=`${-1*direction*100}%`;
+function togglePage(event){
+    let display=getComputedStyle(document.body).getPropertyValue("--display");
+    if(display==='"normal"'){
+        event.preventDefault();
+        let selectedPage=event.target.innerText.toLowerCase();
+        if(CURRENT===selectedPage) return;
+        
+        let currentPage=document.getElementById(CURRENT);
+        let currentIndex=SEQUENCE.indexOf(CURRENT);
+        let nextIndex=SEQUENCE.indexOf(selectedPage);
+        let direction=(currentIndex-nextIndex>0)? -1 : 1;
+    
+        currentPage.style.left=`${-1*direction*100}%`;
+        for(let i=currentIndex+direction;;i+=direction){
+            let thisPage=document.getElementById(SEQUENCE[i]);
+            thisPage.style.opacity="1";
+            thisPage.style.left="0";
+            if(SEQUENCE[i]===selectedPage) break;
+            thisPage.style.opacity="0";
+            thisPage.style.left=`${-1*direction*100}%`;
+        }
     }
 }
 
@@ -32,10 +44,6 @@ document.addEventListener("DOMContentLoaded",function(){
     let navBar=document.getElementById("navbar");
     let mainContent=document.getElementById("main-content");
     mainContent.style.minHeight=`calc(100% - ${navBar.offsetHeight}px)`;
-    
-    // let socials=document.getElementById("socials");
-    // let welcomeSections=document.getElementById("welcome-section");
-    // welcomeSections.style.minHeight=`calc(100% - 25px - ${socials.offsetHeight}px)`;
     
     let name=Array.from("GEORGE MOBISA");
     let nameContainer=document.getElementById("name");
