@@ -5,7 +5,7 @@
 }
 
 :root{
-    --display: "normal";
+    --display: "normal"; /* changes when the webpage is viewed on smaller devices */
     --red: #F50000;
     --black: #333333;
     --white: #F5F5F5;
@@ -176,7 +176,6 @@ body{
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-start;
-    /* border: 1px solid red; */
 }
 
 #welcome-section::-webkit-scrollbar{
@@ -188,7 +187,6 @@ body{
     width: 100%;
     max-width: 100%;
     display: flex;
-    /* border: 1px solid red; */
 }
 
 .welcome:last-of-type{
@@ -202,7 +200,6 @@ body{
     line-height: var(--font-size);
     font-weight: normal;
     font-family: "Courier Prime", monospace;
-    /* border: 1px solid red; */
 }
 
 #introduction{
@@ -217,13 +214,11 @@ body{
     flex-wrap: wrap;
     flex-direction: row;
     align-items: flex-end;
-    /* border: 1px solid red; */
 }
 
 #hello{
     display: block;
     margin-right: 17px;
-    /* border: 1px solid red; */
 }
 
 #introduction h1 > span:last-of-type{
@@ -231,7 +226,6 @@ body{
     flex-direction: row;
     align-items: flex-end;
     justify-content: flex-start;
-    /* border: 1px solid red; */
 }
 
 #name{
@@ -239,7 +233,6 @@ body{
     font-size: calc(var(--font-size) + 4px);
     line-height: calc(var(--font-size) + 4px);
     font-family: "Black Ops One", monospace;
-    /* border: 1px solid red; */
 }
 
 #cursor{
@@ -264,7 +257,6 @@ body{
     max-width: 100%;
     font-size: 19px;
     font-family: "Cutive Mono", monospace;
-    /* border: 1px solid red; */
 }
 
 #skill-set{
@@ -318,7 +310,6 @@ body{
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
-    /* border: 1px solid red; */
 }
 
 .social-link{
@@ -359,7 +350,6 @@ body{
     flex-wrap: wrap;
     align-items: center;
     justify-content: flex-start;
-    /* border: 1px solid red; */
 }
 
 .content-title{
@@ -383,7 +373,6 @@ body{
     font-size: 19px;
     font-family: "Cutive Mono", monospace;
     transition: left 1s linear;
-    /* border: 1px solid red; */
 }
 
 .content-container:not(:nth-child(1)){
@@ -428,19 +417,16 @@ body{
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     background-color: var(--black);
-    /* border: 1px solid var(--red); */
 }
 
 .period{
     margin-right: 50px;
-    /* border: 1px solid var(--red); */
 }
 
 .title{
     display: inline-block;
     color: var(--white);
     text-decoration: none;
-    /* border: 1px solid var(--red); */
 }
 
 .title::after{
@@ -464,7 +450,6 @@ body{
     padding: 10px;
     width: 100%;
     max-width: 100%;
-    /* border: 1px solid red; */
 }
 
 .tools,
@@ -504,7 +489,6 @@ body{
     width: 100%;
     max-width: 100%;
     margin-bottom: 25px;
-    /* border: 1px solid red; */
 }
 
 .contact:last-child{
@@ -529,7 +513,6 @@ form.contact div{
     flex-direction: row;
     align-items: baseline;
     justify-content: flex-start;
-    /* border: 1px solid red; */
 }
 
 form.contact div:last-of-type{
@@ -575,12 +558,4 @@ form.contact > input{
     font-size: 18px;
     font-weight: bold;
     font-family: "Cutive Mono", monospace;
-}
-
-/* #welcome-section, */
-/* #navbar, */
-/* #content-section, */
-#nothing
-{
-    display: none;
 }
