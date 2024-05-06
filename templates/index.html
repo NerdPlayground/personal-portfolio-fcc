@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
     <head>
         <meta charset="utf-8">
@@ -6,8 +7,8 @@
         <meta name="description" content="Get to know a little bit more about the man behind the name">
         <title>George Mobisa</title>
         <link rel="icon" href="" type="image/x-icon" sizes="16x16 32x32">
-        <link rel="stylesheet" href="../static/css/styles.css">
-        <link rel="stylesheet" href="../static/css/media-queries.css">
+        <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+        <link rel="stylesheet" href="{% static 'css/media-queries.css' %}">
         <!-- Google Fonts; Black Ops One, Roboto Condensed, Cutive Mono -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -222,6 +223,6 @@
                 </section>
             </main>
         </div>
-        <script src="../static/js/main.js"></script>
+        <script src="{% static 'js/main.js' %}"></script>
     </body>
 </html>
