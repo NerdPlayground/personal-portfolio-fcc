@@ -1,3 +1,104 @@
+@import "functions";
+
 @media (prefers-reduced-motion:no-preference){
     *{ scroll-behavior: smooth; }
+}
+
+@media screen and (max-width: 1300px){
+    :root{
+        --display: "responsive";
+    }
+
+    #main-content{
+        @include flex(column,center,flex-start);
+    }
+
+    #welcome-section,#content-section{
+        padding-bottom: 0;
+        width: 65%;
+        max-width: 65%;
+        min-height: fit-content;
+    }
+
+    #welcome-section{
+        padding-top: 25px;
+        margin-bottom: 100px;
+    }
+
+    #content-section{
+        overflow: visible;
+    }
+
+    .content-title{
+        display: block;
+    }
+
+    .content-container{
+        position: relative;
+        overflow: visible;
+        left: auto !important;
+        padding-bottom: 0;
+        margin-bottom: 100px;
+        height: fit-content;
+        max-height: fit-content;
+    }
+}
+
+@media screen and (max-width: 875px){
+    #welcome-section,#content-section{
+        width: 75%;
+        max-width: 75%;
+    }
+}
+
+@media screen and (max-width: 775px){
+    #welcome-section,#content-section{
+        width: 85%;
+        max-width: 85%;
+    }
+}
+
+@media screen and (max-width: 675px){
+    #welcome-section,#content-section{
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 575px){
+    #navbar a{
+        display: none;
+    }
+    
+    #nav-pane{
+        display: flex;
+    }
+
+    .toggle-nav-pane{
+        display: block;
+    }
+
+    #introduction h1{
+        @include flex(column,flex-start,flex-start);
+    }
+
+    #hello{
+        margin-bottom: 10px;
+    }
+
+    form.contact div{
+        flex-direction: column;
+    }
+
+    form.contact > div > label{
+        margin-bottom: 5px;
+        width: fit-content;
+        max-width: fit-content;
+    }
+
+    .input{
+        min-width: 100%;
+        width: 100%;
+        max-width: 100%;
+    }
 }
