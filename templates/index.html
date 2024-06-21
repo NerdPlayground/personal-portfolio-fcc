@@ -16,7 +16,7 @@
     </head>
     <body>
         <div id="root">
-            <nav id="nav-pane">
+            <nav id="nav-pane" class="fit-width">
                 <svg class="button toggle-nav-pane" fill="#333333" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" onclick="toggleNavPane()">
                     <path fill-rule="evenodd" d="M19.505 4.975a.6.6 0 0 1 0 .85l-13.2 13.2a.6.6 0 0 1-.85-.85l13.2-13.2a.598.598 0 0 1 .85 0Z" clip-rule="evenodd"></path>
                     <path fill-rule="evenodd" d="M5.456 4.975a.6.6 0 0 0 0 .85l13.2 13.2a.6.6 0 1 0 .85-.85l-13.2-13.2a.6.6 0 0 0-.85 0Z" clip-rule="evenodd"></path>
@@ -27,7 +27,7 @@
                     <a onclick="togglePage(event)" class="button nav-link" href="#contact">Contact</a>
                 </div>
             </nav>
-            <nav id="navbar">
+            <nav id="navbar" class="fit-height">
                 <a onclick="togglePage(event)" class="button nav-link" href="#projects">Projects</a>
                 <a onclick="togglePage(event)" class="button nav-link" href="#experience">Experience</a>
                 <a onclick="togglePage(event)" class="button nav-link" href="#contact">Contact</a>
@@ -35,24 +35,24 @@
                     <path fill-rule="evenodd" d="M4.92 17.28a.6.6 0 0 1 .6-.6h12a.599.599 0 1 1 0 1.2h-12a.6.6 0 0 1-.6-.6Zm0-4.8a.6.6 0 0 1 .6-.6h12a.599.599 0 1 1 0 1.2h-12a.6.6 0 0 1-.6-.6Zm0-4.8a.6.6 0 0 1 .6-.6h12a.6.6 0 1 1 0 1.2h-12a.6.6 0 0 1-.6-.6Z" clip-rule="evenodd"></path>
                 </svg>
             </nav>
-            <main id="main-content">
-                <section id="welcome-section">
-                    <div id="introduction" class="welcome">
+            <main id="main-content" class="fit-height">
+                <section id="welcome-section" class="fit-height">
+                    <div id="introduction" class="fit-height welcome">
                         <h1 class="block-title">
                             <span id="hello">Hello there, I'm</span>
                             <span><span id="name"></span><span id="cursor"></span></span>
                         </h1>
-                        <div id="description">
+                        <div id="description" class="fit-height">
                             ...a Software Developer with an aptitude for analytical concepts. Having experience as a 
                             backend and frontend developer, I believe in building ethical, scalable and optimizable systems.
                         </div>
                     </div>
-                    <div id="skill-set" class="welcome">
+                    <div id="skill-set" class="fit-height welcome">
                         <h2 class="block-title">
                             Jack of <span>all</span> 
                             <span>MOST</span> trades
                         </h2>
-                        <div id="skills">
+                        <div id="skills" class="fit-height">
                             <span>C</span><span>C++</span><span>Java</span>
                             <span>Python</span><span>HTML</span><span>CSS</span>
                             <span>Javascript</span><span>Bootstrap</span><span>SASS</span>
@@ -61,33 +61,33 @@
                             <span>Postman</span><span>Swagger</span>
                         </div>
                     </div>
-                    <div id="socials" class="welcome">
-                        <a id="profile-link" class="social-link" target="_blank" href="https://www.freecodecamp.org/nerds-playground">
+                    <div id="socials" class="fit-height welcome">
+                        <a id="profile-link" class="social-link fit-all" target="_blank" href="https://www.freecodecamp.org/nerds-playground">
                             <img src="https://ik.imagekit.io/uxrynlkmb/GeneralAssets/social-freecodecamp-black.png?tr=w-256,h=256" alt="freecodecamp">
                         </a>
-                        <a class="social-link" target="_blank" href="https://github.com/NerdPlayground">
+                        <a class="social-link fit-all" target="_blank" href="https://github.com/NerdPlayground">
                             <img src="https://ik.imagekit.io/uxrynlkmb/GeneralAssets/social-github-black.png?tr=w-256,h=256" alt="github">
                         </a>
-                        <a class="social-link" target="_blank" href="https://codepen.io/nerdsplayground">
+                        <a class="social-link fit-all" target="_blank" href="https://codepen.io/nerdsplayground">
                             <img src="https://ik.imagekit.io/uxrynlkmb/GeneralAssets/social-codepen-black.png?tr=w-256,h=256" alt="codepen">
                         </a>
-                        <a class="social-link" target="_blank" href="https://twitter.com/nplayground_">
+                        <a class="social-link fit-all" target="_blank" href="https://twitter.com/nplayground_">
                             <img src="https://ik.imagekit.io/uxrynlkmb/GeneralAssets/social-twitter-black.png?tr=w-256,h=256" alt="twitter">
                         </a>
-                        <a class="social-link" target="_blank" href="https://www.instagram.com/nplayground_/">
+                        <a class="social-link fit-all" target="_blank" href="https://www.instagram.com/nplayground_/">
                             <img src="https://ik.imagekit.io/uxrynlkmb/GeneralAssets/social-instagram-black.png?tr=w-256,h=256" alt="instagram">
                         </a>
                     </div>
                 </section>
-                <section id="content-section">
+                <section id="content-section" class="fit-height">
                     <div id="projects" class="content-container">
                         <span class="content-title">
                             PROJECTS
                         </span>
-                        <div class="achievement project-tile">
-                            <div class="period-title">
-                                <span class="period">05/22 - 09/22</span>
-                                <a class="title" href="https://github.com/NerdPlayground/allyoucaneat" target="_blank">All You Can Eat</a>
+                        <div class="project-tile fit-height">
+                            <div class="period-title fit-height">
+                                <span class="period fit-all">05/22 - 09/22</span>
+                                <a class="title fit-all" href="https://github.com/NerdPlayground/allyoucaneat" target="_blank">All You Can Eat</a>
                             </div>
                             <div class="description">
                                 Web app for ordering fruits and drinks from connected vendors. 
@@ -95,58 +95,58 @@
                                 Inspired by the SasaPay staff to cater for their meals from Klabu - 
                                 an open market near their offices.
                             </div>
-                            <div class="tools">
-                                <span style="background-color: #3573a6;">Python</span>
-                                <span style="background-color: #0c4b33;">Django</span>
-                                <span style="background-color: #e44c27;">HTML</span>
-                                <span style="background-color: #563e7c;">CSS</span>
-                                <span style="background-color: #f1e15a;">JavaScript</span>
+                            <div class="tools fit-height">
+                                <span class="fit-all" style="background-color: #3573a6;">Python</span>
+                                <span class="fit-all" style="background-color: #0c4b33;">Django</span>
+                                <span class="fit-all" style="background-color: #e44c27;">HTML</span>
+                                <span class="fit-all" style="background-color: #563e7c;">CSS</span>
+                                <span class="fit-all" style="background-color: #f1e15a;">JavaScript</span>
                             </div>
                         </div>
-                        <div class="achievement project-tile">
-                            <div class="period-title">
-                                <span class="period">12/22 - 01/23</span>
-                                <a class="title" href="https://github.com/NerdPlayground/cleanupgmailapi" target="_blank">Cleanup Gmail API</a>
+                        <div class="project-tile fit-height">
+                            <div class="period-title fit-height">
+                                <span class="period fit-all">12/22 - 01/23</span>
+                                <a class="title fit-all" href="https://github.com/NerdPlayground/cleanupgmailapi" target="_blank">Cleanup Gmail API</a>
                             </div>
                             <div class="description">
                                 API for organizing your Gmail's inbox. 
                                 Gets senders, creates filters and labels based on them and groups their respective emails. 
                                 The filters and labels will be applied on other incoming emails, therefore, usage can be limited to at least once a year.
                             </div>
-                            <div class="tools">
-                                <span style="background-color: #3573a6;">Python</span>
-                                <span style="background-color: #a30000;">Djangorest</span>
-                                <span style="background-color: #ff6c37;">Postman</span>
+                            <div class="tools fit-height">
+                                <span class="fit-all" style="background-color: #3573a6;">Python</span>
+                                <span class="fit-all" style="background-color: #a30000;">Djangorest</span>
+                                <span class="fit-all" style="background-color: #ff6c37;">Postman</span>
                             </div>
                         </div>
-                        <div class="achievement project-tile">
-                            <div class="period-title">
-                                <span class="period">05/22 - 10/22</span>
-                                <a class="title" href="https://github.com/NerdPlayground/sasapayproducts" target="_blank">SasaPay Products</a>
+                        <div class="project-tile fit-height">
+                            <div class="period-title fit-height">
+                                <span class="period fit-all">05/22 - 10/22</span>
+                                <a class="title fit-all" href="https://github.com/NerdPlayground/sasapayproducts" target="_blank">SasaPay Products</a>
                             </div>
                             <div class="description">
                                 API that consumes endpoints in SasaPay API. 
                                 The endpoints include business to customer, business to business and payment requests.
                             </div>
-                            <div class="tools">
-                                <span style="background-color: #3573a6;">Python</span>
-                                <span style="background-color: #a30000;">Djangorest</span>
-                                <span style="background-color: #ff6c37;">Postman</span>
+                            <div class="tools fit-height">
+                                <span class="fit-all" style="background-color: #3573a6;">Python</span>
+                                <span class="fit-all" style="background-color: #a30000;">Djangorest</span>
+                                <span class="fit-all" style="background-color: #ff6c37;">Postman</span>
                             </div>
                         </div>
-                        <div class="achievement project-tile">
-                            <div class="period-title">
-                                <span class="period">09/23 - 09/23</span>
-                                <a class="title" href="https://github.com/NerdPlayground/file-handling-platform" target="_blank">File Handling Platform</a>
+                        <div class="project-tile fit-height">
+                            <div class="period-title fit-height">
+                                <span class="period fit-all">09/23 - 09/23</span>
+                                <a class="title fit-all" href="https://github.com/NerdPlayground/file-handling-platform" target="_blank">File Handling Platform</a>
                             </div>
                             <div class="description">
                                 Web app for staging and reviewing files before processing them using your custom implementation. 
                                 Use AJAX requests to send the staged files for processing.
                             </div>
-                            <div class="tools">
-                                <span style="background-color: #e44c27;">HTML</span>
-                                <span style="background-color: #c6538c;">SCSS</span>
-                                <span style="background-color: #f1e15a;">JavaScript</span>
+                            <div class="tools fit-height">
+                                <span class="fit-all" style="background-color: #e44c27;">HTML</span>
+                                <span class="fit-all" style="background-color: #c6538c;">SCSS</span>
+                                <span class="fit-all" style="background-color: #f1e15a;">JavaScript</span>
                             </div>
                         </div>
                     </div>
@@ -154,45 +154,45 @@
                         <span class="content-title">
                             EXPERIENCE
                         </span>
-                        <div class="achievement experience-tile">
-                            <div class="period-title">
-                                <span class="period">05/23 - 08/23</span>
-                                <a class="title" href="https://moti-carsharing.azurewebsites.net/" target="_blank">MOTI INC</a>
+                        <div class="experience-tile fit-height">
+                            <div class="period-title fit-height">
+                                <span class="period fit-all">05/23 - 08/23</span>
+                                <a class="title fit-all" href="https://moti-carsharing.azurewebsites.net/" target="_blank">MOTI INC</a>
                             </div>
                             <div class="positions">
-                                <span>Web Developer</span>
+                                <span class="fit-all">Web Developer</span>
                             </div>
                             <div class="description">
                                 Developed and implemented a visually appealing and user friendly website. 
                                 Implemented robust data storage capabilities. 
                                 Utilized advanced web development techniques to optimize website performance.
                             </div>
-                            <div class="tools">
-                                <span style="background-color: #3573a6;">Python</span>
-                                <span style="background-color: #0c4b33;">Django</span>
-                                <span style="background-color: #e44c27;">HTML</span>
-                                <span style="background-color: #c6538c;">SCSS</span>
-                                <span style="background-color: #f1e15a;">JavaScript</span>
+                            <div class="tools fit-height">
+                                <span class="fit-all" style="background-color: #3573a6;">Python</span>
+                                <span class="fit-all" style="background-color: #0c4b33;">Django</span>
+                                <span class="fit-all" style="background-color: #e44c27;">HTML</span>
+                                <span class="fit-all" style="background-color: #c6538c;">SCSS</span>
+                                <span class="fit-all" style="background-color: #f1e15a;">JavaScript</span>
                             </div>
                         </div>
-                        <div class="achievement experience-tile">
-                            <div class="period-title">
-                                <span class="period">01/22 - 06/22</span>
-                                <a class="title" href="https://www.sasapay.co.ke/" target="_blank">sasapay</a>
+                        <div class="experience-tile fit-height">
+                            <div class="period-title fit-height">
+                                <span class="period fit-all">01/22 - 06/22</span>
+                                <a class="title fit-all" href="https://www.sasapay.co.ke/" target="_blank">sasapay</a>
                             </div>
                             <div class="positions">
-                                <span>Backend Developer</span>
+                                <span class="fit-all">Backend Developer</span>
                             </div>
                             <div class="description">
                                 Contributed to the successful testing of the SasaPay Wallet as a Service platform by providing support during the development process. 
                                 Participated in regular code reviews with the product team and actively sought feedback from senior engineers. 
                                 Developed and implemented a Python script that automated the extraction and organization of information from the KPLC token database.
                             </div>
-                            <div class="tools">
-                                <span style="background-color: #3573a6;">Python</span>
-                                <span style="background-color: #a30000;">Djangorest</span>
-                                <span style="background-color: #ff6c37;">Postman</span>
-                                <span style="background-color: #85ea2d;">Swagger</span>
+                            <div class="tools fit-height">
+                                <span class="fit-all" style="background-color: #3573a6;">Python</span>
+                                <span class="fit-all" style="background-color: #a30000;">Djangorest</span>
+                                <span class="fit-all" style="background-color: #ff6c37;">Postman</span>
+                                <span class="fit-all" style="background-color: #85ea2d;">Swagger</span>
                             </div>
                         </div>
                     </div>
@@ -200,20 +200,20 @@
                         <span class="content-title">
                             CONTACT
                         </span>
-                        <p class="contact">
+                        <p class="contact fit-height">
                             If you have any interesting projects that you need a hand in 
                             or if you just want to say hello, don't hesitate to reach out;
                         </p>
-                        <form class="contact" action="">
-                            <div>
+                        <form class="contact fit-height" action="">
+                            <div class="fit-height">
                                 <label for="username">Name:</label>
                                 <input id="username" class="input" name="username" type="text" placeholder="official name" required/>
                             </div>
-                            <div>
+                            <div class="fit-height">
                                 <label for="email">Email:</label>
                                 <input id="email" class="input" name="email" type="email" placeholder="jdoe@email.com" required/>
                             </div>
-                            <div>
+                            <div class="fit-height">
                                 <label for="message">Message:</label>
                                 <textarea id="message" class="input" name="message" placeholder="Hello George,..." required></textarea>
                             </div>
