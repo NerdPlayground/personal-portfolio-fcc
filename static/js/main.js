@@ -97,7 +97,6 @@ contactForm.addEventListener("submit",function(e){
     let data={
         "name":formdata.get("username"),
         "sender":formdata.get("email"),
-        "receiver":PORTFOLIO_OWNER_EMAIL,
         "message":formdata.get("message"),
     }
     url="https://portfolio-api-vwdg.onrender.com/portfolio-api/v1/contact-user/"
@@ -110,9 +109,13 @@ contactForm.addEventListener("submit",function(e){
         if(!response.ok) throw new Error();
         return response.json();
     })
-    .then(content => cleanUpLoading(contactForm,
-        {"message":"Your message has been sent","error":false}
-    ))
+    .then(content => {
+        cleanUpLoading(contactForm,{
+            "error":false,
+            "message":"Your message has been sent",
+        });
+        contactForm.reset();
+    })
     .catch(error => cleanUpLoading(contactForm,
         {"message":"Your message has not been sent","error":true}
     ));
