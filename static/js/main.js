@@ -1,5 +1,6 @@
 let CURRENT=null; // hold the name of the current page
 const SEQUENCE=[]; // holds the names of all available pages
+const PORTFOLIO_OWNER_EMAIL="studytime023@gmail.com"
 
 /**
  * gets index of an element in an Array
@@ -57,6 +58,65 @@ function togglePage(event){
         }
     }
 }
+
+/** 
+ * controls the loading animation
+*/
+function setupLoading(form){
+    let submitButton=form.getElementsByClassName("button")[0];
+    submitButton.value="Sending...";
+    submitButton.disabled=true;
+    submitButton.classList.add("disabled-button");
+}
+
+/** 
+ * displays server response
+ * disables the loading animation
+*/
+function cleanUpLoading(form,content){
+    let submitButton=form.getElementsByClassName("button")[0];
+    submitButton.value=content.message;
+    submitButton.classList.add((content.error)?"error-message":"success-message")
+    setTimeout(()=>{
+        if(content.error) submitButton.classList.remove("error-message");
+        else submitButton.classList.remove("success-message");
+        submitButton.classList.remove("disabled-button");
+        submitButton.disabled=false;
+        submitButton.value="Send Message";
+    },6000);
+}
+
+/**
+ * sends the user's message to the portfolio owner
+ */
+const contactForm=document.getElementById("contact").getElementsByTagName("form")[0];
+contactForm.addEventListener("submit",function(e){
+    e.preventDefault();
+    setupLoading(contactForm);
+    let formdata=new FormData(contactForm);
+    let data={
+        "name":formdata.get("username"),
+        "sender":formdata.get("email"),
+        "receiver":PORTFOLIO_OWNER_EMAIL,
+        "message":formdata.get("message"),
+    }
+    url="https://portfolio-api-vwdg.onrender.com/portfolio-api/v1/contact-user/"
+    fetch(url,{
+        method: "POST",
+        headers: {'Content-Type':'application/json'},
+        body: JSON.stringify(data),
+    })
+    .then(response =>{
+        if(!response.ok) throw new Error();
+        return response.json();
+    })
+    .then(content => cleanUpLoading(contactForm,
+        {"message":"Your message has been sent","error":false}
+    ))
+    .catch(error => cleanUpLoading(contactForm,
+        {"message":"Your message has not been sent","error":true}
+    ));
+});
 
 document.addEventListener("DOMContentLoaded",function(){
     // enables the main content to occupy the rest of the available screen space

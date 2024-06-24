@@ -7,6 +7,7 @@
 :root{
     --display: "normal"; /* changes when the webpage is viewed on smaller devices */
     --red: #F50000;
+    --green: #00F500;
     --black: #333333;
     --white: #F5F5F5;
     --neu-light: #F5F5F5;
@@ -70,9 +71,18 @@ body{
 }
 
 .button:focus,
-.button:active{
+.button:active,
+.disabled-button{
     border-right-width: 2px;
     border-bottom-width: 2px;
+}
+
+.success-message{
+    border-color: var(--green);
+}
+
+.error-message{
+    border-color: var(--red);
 }
 
 #navbar{
@@ -554,8 +564,8 @@ textarea.input{
 }
 
 form.contact > input{
-    width: 200px;
-    max-width: 200px;
+    width: fit-content;
+    max-width: 100%;
     font-size: 18px;
     font-weight: bold;
     font-family: "Cutive Mono", monospace;
