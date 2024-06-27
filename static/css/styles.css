@@ -86,14 +86,32 @@ body{
 }
 
 #navbar{
-    padding: 25px;
+    width: 100%;
+    max-width: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: flex-end;
-    width: 100%;
-    max-width: 100%;
-    /* border: 1px solid red; */
+}
+
+#logo{
+    display: none;
+    margin-inline: 25px;
+    padding: 10px;
+    font-size: 27.5px;
+    color: var(--black);
+    text-decoration: none;
+    font-family: "Black Ops One", monospace;
+    border-radius: 50%;
+    border: 2px dashed var(--black);
+}
+
+#links{
+    margin: 25px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
 }
 
 .nav-link{
@@ -105,7 +123,7 @@ body{
     font-family: "Courier Prime", monospace;
 }
 
-#navbar a:last-of-type{
+#links a:last-of-type{
     margin-right: 0;
 }
 
@@ -176,7 +194,7 @@ body{
     display: none;
 }
 
-#welcome-section{
+#welcome{
     padding-inline: 25px;
     padding-block: 0 15px;
     width: var(--section1);
@@ -188,7 +206,7 @@ body{
     justify-content: flex-start;
 }
 
-#welcome-section::-webkit-scrollbar{
+#welcome::-webkit-scrollbar{
     display: none;
 }
 

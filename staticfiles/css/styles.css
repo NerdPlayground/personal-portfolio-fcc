@@ -166,7 +166,7 @@ body{
     display: none;
 }
 
-#welcome-section{
+#welcome{
     padding-inline: 25px;
     padding-block: 0 15px;
     width: var(--section1);
@@ -178,7 +178,7 @@ body{
     justify-content: flex-start;
 }
 
-#welcome-section::-webkit-scrollbar{
+#welcome::-webkit-scrollbar{
     display: none;
 }
 
