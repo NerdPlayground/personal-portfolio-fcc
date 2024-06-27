@@ -97,6 +97,7 @@ contactForm.addEventListener("submit",function(e){
     let data={
         "name":formdata.get("username"),
         "sender":formdata.get("email"),
+        "receiver":PORTFOLIO_OWNER_EMAIL,
         "message":formdata.get("message"),
     }
     url="https://portfolio-api-vwdg.onrender.com/portfolio-api/v1/contact-user/"
