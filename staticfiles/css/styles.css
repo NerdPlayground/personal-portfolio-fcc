@@ -2,13 +2,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    -webkit-tap-highlight-color: transparent;
 }
 
 :root{
     --display: "normal"; /* changes when the webpage is viewed on smaller devices */
     --red: #F50000;
-    --green: #00F500;
     --black: #333333;
     --white: #F5F5F5;
     --neu-light: #F5F5F5;
@@ -72,47 +70,20 @@ body{
 }
 
 .button:focus,
-.button:active,
-.disabled-button{
+.button:active{
     border-right-width: 2px;
     border-bottom-width: 2px;
 }
 
-.success-message{
-    border-color: var(--green);
-}
-
-.error-message{
-    border-color: var(--red);
-}
-
 #navbar{
+    padding: 25px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
     width: 100%;
     max-width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-end;
-}
-
-#logo{
-    display: none;
-    margin-inline: 25px;
-    padding: 10px;
-    font-size: 27.5px;
-    color: var(--black);
-    text-decoration: none;
-    font-family: "Black Ops One", monospace;
-    border-radius: 50%;
-    border: 2px dashed var(--black);
-}
-
-#links{
-    margin: 25px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-end;
+    /* border: 1px solid red; */
 }
 
 .nav-link{
@@ -124,7 +95,7 @@ body{
     font-family: "Courier Prime", monospace;
 }
 
-#links a:last-of-type{
+#navbar a:last-of-type{
     margin-right: 0;
 }
 
@@ -583,8 +554,8 @@ textarea.input{
 }
 
 form.contact > input{
-    width: fit-content;
-    max-width: 100%;
+    width: 200px;
+    max-width: 200px;
     font-size: 18px;
     font-weight: bold;
     font-family: "Cutive Mono", monospace;

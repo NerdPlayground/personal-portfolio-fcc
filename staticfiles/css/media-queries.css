@@ -7,14 +7,6 @@
         --display: "responsive";
     }
 
-    #navbar{
-        justify-content: space-between;
-    }
-
-    #logo{
-        display: block;
-    }
-
     #main-content{
         flex-direction: column;
         align-items: center;
@@ -64,22 +56,6 @@
         width: 85%;
         max-width: 85%;
     }
-
-    #logo{
-        visibility: hidden;
-    }
-    
-    #links a{
-        display: none;
-    }
-    
-    #nav-pane{
-        display: flex;
-    }
-
-    .toggle-nav-pane{
-        display: block;
-    }
 }
 
 @media screen and (max-width: 675px){
@@ -90,6 +66,18 @@
 }
 
 @media screen and (max-width: 575px){
+    #navbar a{
+        display: none;
+    }
+    
+    #nav-pane{
+        display: flex;
+    }
+
+    .toggle-nav-pane{
+        display: block;
+    }
+
     #introduction h1{
         display: flex;
         flex-direction: column;
