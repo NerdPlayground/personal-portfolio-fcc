@@ -41,6 +41,35 @@ function toggleNavPane(event){
 }
 
 /**
+ * disables all navbar buttons
+ */
+function disableButtons(){
+    let links=document.getElementById("links");
+    let navLinks=links.getElementsByClassName("nav-link");
+    for(let i=0; i<navLinks.length; i++){
+        navLinks[i].removeAttribute("href");
+        navLinks[i].removeAttribute("onclick");
+        navLinks[i].setAttribute("role","link");
+        navLinks[i].setAttribute("aria-disabled",true);
+    }
+}
+
+/**
+ * enables all navbar buttons
+ */
+function enableButtons(){
+    let links=document.getElementById("links");
+    let navLinks=links.getElementsByClassName("nav-link");
+    for(let i=0; i<navLinks.length; i++){
+        let link=navLinks[i].innerText.toLowerCase();
+        navLinks[i].setAttribute("href",`#${link}`);
+        navLinks[i].setAttribute("onclick","togglePage(event)");
+        navLinks[i].removeAttribute("role");
+        navLinks[i].removeAttribute("aria-disabled");
+    }
+}
+
+/**
  * brings selected page into view
  */
 function togglePage(event){
@@ -48,11 +77,13 @@ function togglePage(event){
     /**
      * normal link functionality is used
      * when the webpage is viewed on smaller devices
-     */
+    */
     if(display==='"normal"'){
         event.preventDefault();
         let selectedPage=event.target.innerText.toLowerCase();
         if(CURRENT===selectedPage) return;
+        // prevent user from loading another page
+        disableButtons();
         
         let currentPage=document.getElementById(CURRENT);
         let currentIndex=SEQUENCE.indexOf(CURRENT);
@@ -161,14 +192,19 @@ document.addEventListener("DOMContentLoaded",function(){
 
     // sets tracking on all the available content pages
     let observer=new IntersectionObserver((entries,observer)=>{
-        entries.forEach(entry=>CURRENT=(entry.isIntersecting)?entry.target.id:CURRENT);
+        for(let entry of entries){
+            if(entry.isIntersecting){
+                CURRENT=entry.target.id;
+                // allow user to load another page
+                // after current page has fully loaded
+                if(entries.length!==3) enableButtons();
+                break;
+            }
+        }
     },{threshold:1.0});
 
     let contentContainers=Array.from(document.getElementsByClassName("content-container"));
     contentContainers.forEach(container=>{
         observer.observe(container); SEQUENCE.push(container.id);
     });
-
-    let hello=document.getElementById("hello");
-    console.log(hello.classList.contains("content"));
 });
