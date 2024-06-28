@@ -28,7 +28,7 @@ DEBUG = config('DEBUG',True,cast=bool)
 
 ALLOWED_HOSTS = [
     "127.0.0.1",
-    "",
+    "portfolio-theta-ten-58.vercel.app",
 ]
 
 
