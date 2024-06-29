@@ -131,7 +131,7 @@ function cleanUpLoading(form,content){
         submitButton.classList.remove("disabled-button");
         submitButton.disabled=false;
         submitButton.value="Send Message";
-    },6000);
+    },10000);
 }
 
 /**
@@ -155,8 +155,12 @@ contactForm.addEventListener("submit",function(e){
         body: JSON.stringify(data),
     })
     .then(response =>{
-        if(!response.ok) throw new Error();
-        return response.json();
+        if(response.ok)
+            return response.json();
+        else if(response.status===400)
+            throw new Error("Please confirm that you have filled in the correct details and try again.");
+        else if(response.status===500)
+            throw new Error("There's a problem with the system and we are currently working to fix it. Please try again later.");
     })
     .then(content => {
         cleanUpLoading(contactForm,{
@@ -165,9 +169,10 @@ contactForm.addEventListener("submit",function(e){
         });
         contactForm.reset();
     })
-    .catch(error => cleanUpLoading(contactForm,
-        {"message":"Your message has not been sent","error":true}
-    ));
+    .catch(error => cleanUpLoading(contactForm,{
+        "error":true,
+        "message":`Your message has not been sent. ${error.message}`,
+    }));
 });
 
 document.addEventListener("DOMContentLoaded",function(){

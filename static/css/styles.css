@@ -584,6 +584,7 @@ textarea.input{
 
 form.contact > input{
     width: fit-content;
+    white-space: normal;
     max-width: 100%;
     font-size: 18px;
     font-weight: bold;
