@@ -133,5 +133,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # External API Interaction
 
 CSRF_TRUSTED_ORIGINS = [
-    "",
+    "https://portfolio-theta-ten-58.vercel.app/",
 ]
