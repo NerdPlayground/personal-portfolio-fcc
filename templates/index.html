@@ -40,48 +40,8 @@
                 </div>
             </nav>
             <main id="main-content" class="fit-height">
-                <section id="welcome" class="fit-height">
-                    <div id="introduction" class="fit-height welcome">
-                        <h1 class="block-title">
-                            <span id="hello">Hello there, I'm</span>
-                            <span><span id="name"></span><span id="cursor"></span></span>
-                        </h1>
-                        <div id="description" class="fit-height">
-                            ...a Software Developer with an aptitude for analytical concepts. Having experience as a 
-                            backend and frontend developer, I believe in building ethical, scalable and optimizable systems.
-                        </div>
-                    </div>
-                    <div id="skill-set" class="fit-height welcome">
-                        <h2 class="block-title">
-                            Jack of <span>all</span> 
-                            <span>MOST</span> trades.
-                        </h2>
-                        <div id="skills" class="fit-height">
-                            <span>C</span><span>C++</span><span>Java</span>
-                            <span>Python</span><span>HTML</span><span>CSS</span>
-                            <span>Javascript</span><span>Bootstrap</span><span>SASS</span>
-                            <span>React</span><span>Redux</span><span>jQuery</span>
-                            <span>Django</span><span>Djangorest</span><span>PostgreSQL</span>
-                            <span>Postman</span><span>Swagger</span>
-                        </div>
-                    </div>
-                    <div id="socials" class="fit-height welcome">
-                        <a id="profile-link" class="social-link fit-all" target="_blank" href="https://www.freecodecamp.org/nerds-playground">
-                            <img src="https://ik.imagekit.io/uxrynlkmb/GeneralAssets/social-freecodecamp-black.png?tr=w-256,h=256" alt="freecodecamp">
-                        </a>
-                        <a class="social-link fit-all" target="_blank" href="https://github.com/NerdPlayground">
-                            <img src="https://ik.imagekit.io/uxrynlkmb/GeneralAssets/social-github-black.png?tr=w-256,h=256" alt="github">
-                        </a>
-                        <a class="social-link fit-all" target="_blank" href="https://codepen.io/nerdsplayground">
-                            <img src="https://ik.imagekit.io/uxrynlkmb/GeneralAssets/social-codepen-black.png?tr=w-256,h=256" alt="codepen">
-                        </a>
-                        <a class="social-link fit-all" target="_blank" href="https://twitter.com/nplayground_">
-                            <img src="https://ik.imagekit.io/uxrynlkmb/GeneralAssets/social-twitter-black.png?tr=w-256,h=256" alt="twitter">
-                        </a>
-                        <a class="social-link fit-all" target="_blank" href="https://www.instagram.com/nplayground_/">
-                            <img src="https://ik.imagekit.io/uxrynlkmb/GeneralAssets/social-instagram-black.png?tr=w-256,h=256" alt="instagram">
-                        </a>
-                    </div>
+                <section id="welcome">
+                    {% include "welcome.html" %}
                 </section>
                 <section id="content-section" class="fit-height">
                     {% include "projects.html" %}

@@ -135,3 +135,18 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CSRF_TRUSTED_ORIGINS = [
     "https://portfolio-theta-ten-58.vercel.app/",
 ]
+
+
+# Portfolio API Endpoints
+
+BASE_URL = "https://portfolio-api-vwdg.onrender.com/portfolio-api/v1"
+
+PORTFOLIO_USER = config("PORTFOLIO_USER")
+
+USER_ENDPOINT = f"{BASE_URL}/users/{PORTFOLIO_USER}"
+
+ENDPOINTS = {
+    "DETAILS" : f"{USER_ENDPOINT}/",
+    "PROJECTS" : f"{USER_ENDPOINT}/projects/",
+    "EXPERIENCES" : f"{USER_ENDPOINT}/experiences/",
+}

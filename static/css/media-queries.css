@@ -16,6 +16,7 @@
     }
 
     #main-content{
+        overflow: auto;
         flex-direction: column;
         align-items: center;
         justify-content: flex-start;    
@@ -26,15 +27,14 @@
         padding-bottom: 0;
         width: 65%;
         max-width: 65%;
+        overflow: visible;
     }
 
     #welcome{
         padding-top: 25px;
         margin-bottom: 100px;
-    }
-
-    #content-section{
-        overflow: visible;
+        height: fit-content;
+        max-height: fit-content;
     }
 
     .content-title{
