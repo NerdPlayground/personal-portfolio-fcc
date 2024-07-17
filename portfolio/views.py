@@ -5,7 +5,6 @@ from django.shortcuts import render
 
 def get_data(key,testing=True):
     if testing:
-        print("Here I am")
         contents=read_file(settings.BASE_DIR.joinpath("data.json"),True)
         return contents[key.casefold()]
 
@@ -33,7 +32,7 @@ def get_details():
 def home(request):
     context={
         "details":get_details(),
-        # "projects":get_projects(),
-        # "experiences":get_experiences(),
+        "projects":get_projects(),
+        "experiences":get_experiences(),
     }
     return render(request,"index.html",context)

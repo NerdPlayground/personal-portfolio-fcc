@@ -489,14 +489,29 @@ body{
     100%{ transform: rotate(90deg) scale(1.25); }
 }
 
+.objectives,
 .description{
     padding: 10px;
     width: 100%;
     max-width: 100%;
 }
 
-.tools,
-.positions{
+.experience-tile .description{
+    font-weight: bold;
+}
+
+.objectives{
+    list-style-type: "\25cf  ";
+    list-style-position: inside;
+    border-top: 2px dashed var(--black);
+}
+
+.objectives li{
+    padding-left: 15px;
+    margin-bottom: 2.5px;
+}
+
+.tools{
     padding: 10px;
     padding-bottom: 0;
     width: 100%;
@@ -515,17 +530,6 @@ body{
     margin-right: 10px;
     margin-bottom: 10px;
     color: var(--white);
-    font-weight: bold;
-}
-
-.positions{
-    border: none;
-    border-bottom: 2px dashed var(--black);;
-}
-
-.positions span{
-    margin-right: 10px;
-    margin-bottom: 10px;
     font-weight: bold;
 }
 
