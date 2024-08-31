@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'portfolio',
+    'debug_toolbar',
 ]
 
 MIDDLEWARE = [
@@ -51,6 +52,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
@@ -135,3 +137,25 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CSRF_TRUSTED_ORIGINS = [
     "https://portfolio-theta-ten-58.vercel.app/",
 ]
+
+
+# Django Debug Toolbar
+
+INTERNAL_IPS = [
+    "127.0.0.1",
+]
+
+
+# Portfolio API Endpoints
+
+BASE_URL = "https://portfolio-api-vwdg.onrender.com/portfolio-api/v1"
+
+PORTFOLIO_USER = config("PORTFOLIO_USER")
+
+USER_ENDPOINT = f"{BASE_URL}/users/{PORTFOLIO_USER}"
+
+ENDPOINTS = {
+    "DETAILS" : f"{USER_ENDPOINT}/",
+    "PROJECTS" : f"{USER_ENDPOINT}/projects/",
+    "EXPERIENCES" : f"{USER_ENDPOINT}/experiences/",
+}

@@ -20,4 +20,5 @@ from django.views.generic.base import TemplateView as home
 
 urlpatterns = [
     path("",include("portfolio.urls")),
+    path("__debug__/", include("debug_toolbar.urls")),
 ]

@@ -1,0 +1,26 @@
+<div id="introduction" class="fit-height welcome">
+    <h1 class="block-title">
+        <span id="hello">Hello there, I'm</span>
+        <span><span id="name"></span><span id="cursor"></span></span>
+    </h1>
+    <div id="description" class="fit-height">
+        ...{{details.bio}}.
+    </div>
+</div>
+<div id="skill-set" class="fit-height welcome">
+    <h2 class="block-title">
+        Jack of <span>all</span> 
+        <span>MOST</span> trades.
+    </h2>
+    <div id="skills" class="fit-height">
+        {% for skill in details.skills %}
+            <span>{{skill}}</span>
+        {% endfor %}
+    </div>
+</div>
+<div id="socials" class="fit-height welcome">
+    {% for social,link in details.socials.items %}
+        <a class="social-link fit-all" target="_blank" href={{link}}>
+        <img src="https://ik.imagekit.io/uxrynlkmb/GeneralAssets/social-{{social}}-black.png?tr=w-256,h=256" alt={{social}}></a>
+    {% endfor %}
+</div>
