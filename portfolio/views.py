@@ -29,4 +29,5 @@ def home(request):
         "projects":get_projects(),
         "experiences":get_experiences(),
     }
+    
     return render(request,"index.html",context)
