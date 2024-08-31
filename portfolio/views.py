@@ -1,13 +1,8 @@
 import requests
-from common import read_file
 from django.conf import settings
 from django.shortcuts import render
 
-def get_data(key,testing=True):
-    if testing:
-        contents=read_file(settings.BASE_DIR.joinpath("data.json"),True)
-        return contents[key.casefold()]
-
+def get_data(key):
     response=requests.get(
         url=settings.ENDPOINTS.get(key),
         headers={"Content-Type":"application/json"},
@@ -24,8 +19,7 @@ def get_experiences():
 def get_details():
     details=get_data("DETAILS")
     profile=details.pop("profile")
-    bio=profile["bio"]
-    profile["bio"]=bio[0].casefold()+bio[1:]
+    profile["bio"]=profile["bio"][0].casefold()+profile["bio"][1:]
     details.update(profile)
     return details
 
