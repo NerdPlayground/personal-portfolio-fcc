@@ -1,33 +1,30 @@
-import requests
-from django.conf import settings
+import json
 from django.shortcuts import render
 
-def get_data(key):
-    response=requests.get(
-        url=settings.ENDPOINTS.get(key),
-        headers={"Content-Type":"application/json"},
-    )
-    response.raise_for_status()
-    return response.json()
+def read_file(source,json_data=False,split=None):
+    with open(source,"r",encoding="utf-8") as read_from:
+        result=(
+            json.loads(read_from.read()) if json_data else
+            [line.strip() for line in read_from if line.strip()!='']
+        )
+        
+        return (
+            result if split==None 
+            else [value.split(sep=split) for value in result]
+        )
 
-def get_projects():
-    return get_data("PROJECTS")
-
-def get_experiences():
-    return get_data("EXPERIENCES")
-
-def get_details():
-    details=get_data("DETAILS")
+def home(request):
+    data=read_file("data.json",json_data=True)
+    
+    details=data.get("details")
     profile=details.pop("profile")
     profile["bio"]=profile["bio"][0].casefold()+profile["bio"][1:]
     details.update(profile)
-    return details
 
-def home(request):
     context={
-        "details":get_details(),
-        "projects":get_projects(),
-        "experiences":get_experiences(),
+        "details": details,
+        "projects": data.get("projects"),
+        "experiences": data.get("experiences"),
     }
     
     return render(request,"index.html",context)
